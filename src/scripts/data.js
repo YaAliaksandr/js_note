@@ -99,30 +99,93 @@ const data = [
 
 
 
-function calculateAvAge1(elements) {
-	let counter = 0;
-	return elements
-		.reduce((accum, item) => {
-			if (item['city'] !== 'warszawa' && item['city'] !== 'warsaw') {
-				counter++;
+// function calculateAvAge1(elements) {
+// 	let counter = 0;
+// 	return elements
+// 		.reduce((accum, item) => {
+// 			if (item['city'] !== 'warszawa' && item['city'] !== 'warsaw') {
+// 				counter++;
 
-				accum += item.age;
+// 				accum += item.age;
 
-				return accum;
-			}
-			return accum = accum
-		}, 0) / counter;
+// 				return accum;
+// 			}
+// 			return accum = accum
+// 		}, 0) / counter;
+// }
+// console.log("1====", calculateAvAge1(data));
+
+
+// const calculateAvAge1ArrFunc = (elements) => {
+// 	let counter = 0;
+// 	return elements.reduce((accum, item) => {
+// 		if (item['city'] !== 'warszawa' && item['city'] !== 'warsaw') {
+// 			counter++;
+// 			accum += item.age;
+// 		}
+// 		return accum;
+// 	}, 0) / counter;
+// }
+
+// console.log("2===", calculateAvAge1ArrFunc(data));
+// function calculateAvAge1Filter(elements) {
+// 	let filteredArr = elements.filter((item) => {
+// 		if (item['city'] !== 'warszawa' && item['city'] !== 'warsaw') {
+// 			return true;
+// 		}
+// 	})
+// 	return filteredArr.reduce((acc, item) => (acc += item.age), 0) / filteredArr.length;
+// }
+
+// console.log(calculateAvAge1Filter(data));
+
+// function tr(el) {
+// 	let bool = true;
+// 	for (let val of el) {
+// 		if (val.age > 29) {
+// 			return bool = false;
+// 		}
+// 	}
+// 	return bool;
+// }
+// console.log(tr(data));
+
+// const isAllYoungerThan30 = (el) => el.every((item) => item.age < 30);
+// console.log(isAllYoungerThan30(data));
+// const isKrakow = (el) => el.some((item) => item.city === "krakow");
+// console.log(isKrakow(data));
+
+const loveJs = (el) => {
+	// let arrName = [];
+	// for (let val of el) {
+	// 	if (val.hobbies.includes('js')) {
+	// 		arrName.push(val.name);
+	// 	}
+	// }
+	// return arrName;
+
+
+	// let filterEl = el.filter((item) => item.hobbies.includes('js'));
+	// let mapArr = filterEl.map((item) => item.name);
+	// return mapArr;
+
+	return el
+		.filter((item) => item.hobbies.includes('js'))
+		.map((item) => item.name);
+	// return mapArr
 }
-console.log("1====", calculateAvAge1(data));
-const calculateAvAge1ArrFunc = (elements) => {
-	let counter = 0;
-	return elements.reduce((accum, item) => {
-		if (item['city'] !== 'warszawa' && item['city'] !== 'warsaw') {
-			counter++;
-			accum += item.age;
-		}
-		return accum;
-	}, 0) / counter;
-}
-console.log("2===", calculateAvAge1ArrFunc(data));
 
+
+console.log(loveJs(data));
+let uniqHobbie = (el) => {
+
+	let setOfArr = new Set();
+
+	for (let val of el) {
+		val.hobbies.forEach((element) => {
+			setOfArr.add(element);
+		})
+	}
+	return setOfArr.size;
+}
+console.log(uniqHobbie(data))
