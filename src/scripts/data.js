@@ -177,6 +177,7 @@ const loveJs = (el) => {
 
 
 console.log(loveJs(data));
+
 let uniqHobbie = (el) => {
 
 	let setOfArr = new Set();
@@ -188,4 +189,8 @@ let uniqHobbie = (el) => {
 	}
 	return setOfArr.size;
 }
-console.log(uniqHobbie(data))
+console.log(uniqHobbie(data));
+const x = [[1, 2], [3, 4]];
+const z = [...x];
+x[0][0] = 43;
+console.log
