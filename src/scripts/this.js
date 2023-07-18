@@ -134,9 +134,9 @@ class Magic {
 
 		///this - object klasy Magic
 		// h1Ref.addEventListener('click', (function () {
-		//     this.counter++; // wskazuje na obiekt h1Ref -> dot notation
-		//     console.log(this.counter);
-		// }).bind(this))
+		// 	this.counter++; // wskazuje na obiekt h1Ref -> dot notation
+		// 	console.log(this.counter);
+		// }).bind(this));
 
 		/// this - object klasy Magic
 
@@ -147,6 +147,8 @@ class Magic {
 		//     console.log(that.counter);
 		// }))
 
+
+
 		h1Ref.addEventListener('click', () => {
 			this.counter++; // wskazuje na obiekt h1Ref -> dot notation
 			console.log(this.counter);
@@ -155,7 +157,7 @@ class Magic {
 }
 
 const m = new Magic();
-m.click()
+m.click();
 
 
 
