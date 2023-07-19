@@ -12,7 +12,7 @@ const auto = {
 function startEngine(car) {
 	if (!car.engine) {
 		car.engine = true;
-		console.log("Start")
+		console.log("Start");
 	}
 	else {
 		console.log("Silnik już byl odpalony")
@@ -44,6 +44,9 @@ function slowDown(car, amount) {
 	console.log(`Twoja prendkosc to: ${car.speed}`);
 }
 
+
+
+
 function createAuto(brand, maxSpeed) {
 	return {
 		brand,
@@ -52,8 +55,21 @@ function createAuto(brand, maxSpeed) {
 		maxSpeed
 	}
 }
-
 let bmw = createAuto('bmw', 150);
+startEngine(bmw);
+speedUp(bmw, 30);
+
+
+
+
+
+
+
+
+
+
+
+
 
 function CreateAuto(brand, maxSpeed) {
 	this.brand = brand;
@@ -149,6 +165,28 @@ class Autoclass {
 
 let clasAuto = new Autoclass('classAuto', 500);
 console.log(clasAuto);
+clasAuto.startEngine();
+
+
+class BusAuto extends Autoclass {
+	constructor(brand, maxSpeed, seads) {
+		super(brand, maxSpeed);
+		this.seads = seads;
+	}
+	startEngine() {
+		if (!this.engine) {
+			this.engine = true;
+			console.log("Start Van")
+		}
+		else {
+			console.log("Silnik już byl odpalony")
+		}
+	}
+
+}
+
+let vanAuto = new BusAuto("Van", 600);
+vanAuto.startEngine();
 clasAuto.startEngine();
 
 // console.log(bmw);
