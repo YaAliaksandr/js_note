@@ -167,7 +167,7 @@ let clasAuto = new Autoclass('classAuto', 500);
 console.log(clasAuto);
 clasAuto.startEngine();
 
-// BusAuto class etend AutoDlass
+// BusAuto class extends AutoDlass
 class BusAuto extends Autoclass {
 	constructor(brand, maxSpeed, seads) {
 		super(brand, maxSpeed);
@@ -190,9 +190,3 @@ vanAuto.startEngine();
 clasAuto.startEngine();
 
 // console.log(bmw);
-const func = [1, 2];
-function func() {
-	return "function";
-}
-
-console.log(func);
